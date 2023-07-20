@@ -66,25 +66,31 @@ let gamePlay = (function() {
         let tieGame = !gameBoard.includes("");
         if (tieGame) {
             gameMessage.innerText = tieMessage;
-            gameActive = false;
+            gameOn = false;
             return;
         }
         switchPlayer();
     }
 
-    
+    function switchPlayer() {
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        gameMessage.innerText = currentPlayerTurn();
+    }
+
+    function restart() {
+        gameBoard = ["", "", "", "", "", "", "", "", ""];
+        document.querySelectorAll('.box').forEach(box => box.innerText = "");
+        gameOn = true;
+        currentPlayer = "X";
+        gameMessage.innerText = currentPlayerTurn();
+    }
 
 
-
-
-
-
-
-
-
-return {handleClick}
+return {handleClick, restart}
 
 })();
 
 document.querySelectorAll('.box').forEach(box =>
     box.addEventListener('click', gamePlay.handleClick));
+
+document.querySelector('.restart').addEventListener('click', gamePlay.restart);
