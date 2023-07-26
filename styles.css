@@ -1,5 +1,6 @@
-.body {
-
+html {
+    box-sizing: border-box;
+    background-color: maroon;
 }
 
 .header {
@@ -7,6 +8,7 @@
     justify-content: center;
     align-content: center;
     font-size: 50px;
+    color: rgb(222, 222, 147);
 }
 
 .board-container {
@@ -24,14 +26,22 @@
 }
 
 .box {
-    border: 1px solid black;
+    
     width: 100px;
     height: 100px;
     font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    color: rgb(222, 222, 147) 
+}
+
+.top, .mid {
+    border-bottom: 3px solid rgb(222, 222, 147);
+}
+
+.left, .center {
+    border-right: 3px solid rgb(222, 222, 147);
 }
 
 .displayMessage {
@@ -42,6 +52,7 @@
     margin-top: 20px;
     width: 200px;
     font-size: 40px;
+    color: rgb(222, 222, 147);
 }
 
 .restart {
@@ -55,4 +66,6 @@
     height: 40px;
     font-size: 20px;
     border-radius: 10px;
+    background-color: rgb(222, 222, 147) ;
+    color: maroon
 }
